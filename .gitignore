@@ -1,9 +1,9 @@
 # Environment variables with sensitive credentials
 .env
 
-# Google Sheets API credentials
-credentials/
-*.json
+# Google Sheets API credentials (but keep the README)
+credentials/*.json
+!credentials/README.md
 
 # Python
 __pycache__/
