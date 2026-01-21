@@ -9,7 +9,8 @@ flask-cors==4.0.0
 twilio==8.11.1
 
 # Anthropic Claude API for natural language processing
-anthropic==0.39.0
+anthropic>=0.76.0
+httpx>=0.27.0
 
 # Google APIs for Sheets integration
 google-api-python-client==2.111.0
