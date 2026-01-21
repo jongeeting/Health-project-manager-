@@ -46,7 +46,7 @@ def check_python_version():
     print_header("Checking Python Version")
 
     version = sys.version_info
-    version_str = f"{version.major}.{version.minor}.{version.patch}"
+    version_str = f"{version.major}.{version.minor}.{version.micro}"
 
     if version.major == 3 and version.minor >= 9:
         print_success(f"Python {version_str} (meets requirement: 3.9+)")
