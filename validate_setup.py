@@ -72,11 +72,18 @@ def check_dependencies():
         'gunicorn'
     ]
 
+    # Some packages have different module names than package names
+    package_to_module = {
+        'python-dotenv': 'dotenv',
+    }
+
     all_installed = True
 
     for package in required_packages:
         try:
-            __import__(package.replace('-', '_'))
+            # Get the actual module name (some differ from package name)
+            module_name = package_to_module.get(package, package.replace('-', '_'))
+            __import__(module_name)
             print_success(f"{package}")
         except ImportError:
             print_error(f"{package} - NOT INSTALLED")
